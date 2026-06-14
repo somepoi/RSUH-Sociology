@@ -1,0 +1,27 @@
+[project]
+name = "rsuh-sociology-text-analyzer"
+version = "1.0.0"
+description = "Интерактивный инструмент анализа тональности и частот текстов"
+authors = []
+readme = "README.md"
+requires-python = ">=3.10,<3.14"
+
+# Python-часть проекта
+dependencies = [
+    "requests>=2.31",
+    "beautifulsoup4>=4.12",
+    "lxml>=5.0",
+    "pymorphy3>=2.0",
+    "wordcloud>=1.9",
+    "matplotlib>=3.8",
+]
+
+[project.optional-dependencies]
+# вынесли отдельно, т.к. на части ОС rpy2 собирается из исходников
+rpy2 = ["rpy2>=3.6"]
+
+[tool.pdm]
+distribution = false
+
+[tool.pdm.scripts]
+start = "python start.py"
